@@ -1,48 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 :root {
   /* Brand Colors */
-  --brand-primary: 230 77% 23%; /* #0e1e6c - Deep blue */
-  --brand-secondary: 43 96% 56%; /* #f5b800 - Golden orange from logo */
-  --brand-accent: 230 77% 33%; /* Lighter blue variant */
-  
+  --brand-primary: 230 77% 23%; /* #0e1e6c */
+  --brand-secondary: 43 96% 56%; /* #f5b800 */
+  --brand-accent: 230 77% 33%;
+
   /* Background Colors */
   --bg-primary: 240 13% 98%; /* #f7f7ff */
   --bg-secondary: 220 14% 98%; /* #f9fafb */
   --bg-accent: 230 67% 94%; /* #e0e7ff */
-  --bg-dark: 230 35% 7%; /* Dark mode background */
-  
+  --bg-dark: 230 35% 7%;
+
   /* Text Colors */
-  --text-primary: 230 25% 20%; /* Dark blue-gray */
-  --text-secondary: 230 8% 45%; /* Medium gray */
-  --text-light: 0 0% 100%; /* White */
-  --text-accent: 230 77% 23%; /* Brand primary for accents */
-  
+  --text-primary: 230 25% 20%;
+  --text-secondary: 230 8% 45%;
+  --text-light: 0 0% 100%;
+  --text-accent: 230 77% 23%;
+
   /* UI Colors */
-  --border-light: 230 13% 91%; /* Light borders */
-  --border-medium: 230 13% 80%; /* Medium borders */
-  --shadow-light: 230 15% 25% / 0.1; /* Subtle shadows */
-  --shadow-medium: 230 15% 25% / 0.15; /* Medium shadows */
-  
+  --border-light: 230 13% 91%;
+  --border-medium: 230 13% 80%;
+  --shadow-light: 230 15% 25% / 0.1;
+  --shadow-medium: 230 15% 25% / 0.15;
+
   /* Gradients */
   --gradient-brand: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-accent)));
   --gradient-hero: linear-gradient(135deg, hsl(var(--brand-primary)) 0%, hsl(var(--brand-accent)) 100%);
   --gradient-card: linear-gradient(145deg, hsl(var(--bg-primary)), hsl(var(--bg-accent)));
-  
+
   /* Animations */
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   /* Spacing & Sizing */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
-  
+
   /* Shadows */
   --shadow-elegant: 0 10px 30px -10px hsl(var(--brand-primary) / 0.3);
   --shadow-glow: 0 0 40px hsl(var(--brand-secondary) / 0.4);
@@ -61,6 +62,7 @@
   --border-medium: 230 13% 30%;
 }
 
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -75,7 +77,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Component Styles */
+/* Buttons */
 .btn-primary {
   @apply inline-flex items-center px-8 py-4 rounded-xl bg-brand-secondary text-brand-primary font-semibold font-poppins text-lg shadow-elegant hover:shadow-glow transform hover:scale-105 transition-all duration-300;
 }
@@ -84,6 +86,7 @@ body {
   @apply inline-flex items-center px-8 py-4 rounded-xl bg-text-light/10 backdrop-blur-sm text-text-light font-semibold font-poppins text-lg border border-text-light/20 hover:bg-text-light/20 transition-all duration-300;
 }
 
+/* Navigation Links */
 .nav-link {
   @apply text-text-primary hover:text-brand-primary font-medium transition-colors duration-200 relative;
 }
@@ -96,6 +99,7 @@ body {
   @apply w-full;
 }
 
+/* Cards */
 .service-card {
   @apply bg-bg-primary rounded-xl p-8 shadow-card hover:shadow-hover transform hover:-translate-y-2 transition-all duration-300 border border-border-light;
 }
@@ -104,14 +108,17 @@ body {
   @apply w-16 h-16 bg-gradient-brand rounded-xl flex items-center justify-center text-text-light text-2xl mb-6 group-hover:scale-110 transition-transform duration-300;
 }
 
+/* Form */
 .form-input {
   @apply w-full px-4 py-3 rounded-lg border border-border-light bg-bg-secondary focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all duration-200;
 }
 
+/* Floating WhatsApp Button */
 .whatsapp-float {
   @apply fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 animate-pulse-glow;
 }
 
+/* Back to Top Button */
 .back-to-top {
   @apply fixed bottom-6 left-6 z-50 w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-text-light shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none;
 }
