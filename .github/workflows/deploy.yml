@@ -3,7 +3,7 @@ name: Deploy Vite site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Triggers on push to main branch
+      - main
 
 permissions:
   contents: read
@@ -34,4 +34,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages  # GitHub Pages will use this branch
+          publish_branch: gh-pages  # ✅ MUST include this!
