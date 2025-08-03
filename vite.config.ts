@@ -3,16 +3,16 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
+// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/digital-lift-spark/", // 🔥 must match your repo name
   server: {
-    host: "::",
+    host: true,         // Enables access via network (IPv4 and IPv6)
     port: 8080,
   },
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
-  ].filter(Boolean),
+    ...(mode === "development" ? [componentTagger()] : []), // Cleaner plugin condition
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
