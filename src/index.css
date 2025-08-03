@@ -97,7 +97,7 @@ body {
 }
 
 .service-card {
-  @apply bg-bg-primary rounded-xl p-8 shadow-card hover:shadow-hover transform hover:-translate-y-2 transition-all duration-300 border border-border-light group;
+  @apply bg-bg-primary rounded-xl p-8 shadow-card hover:shadow-hover transform hover:-translate-y-2 transition-all duration-300 border border-border-light;
 }
 
 .service-icon {
