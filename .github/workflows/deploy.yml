@@ -9,8 +9,8 @@ permissions:
   contents: write  # ✅ Required for pushing to gh-pages
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest  # ✅ Fixed this line
 
     steps:
       - name: Checkout code
@@ -27,9 +27,9 @@ jobs:
       - name: Build Vite site
         run: npm run build
 
-      - name: Deploy to gh-pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages  # ✅ Explicitly deploy to gh-pages
+          publish_branch: gh-pages
