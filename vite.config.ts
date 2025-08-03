@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/digital-lift-spark/",
+
   server: {
     host: true,         // Enables access via network (IPv4 and IPv6)
     port: 8080,
