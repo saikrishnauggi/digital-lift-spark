@@ -1,4 +1,4 @@
-name: Deploy Vite site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,12 +6,10 @@ on:
       - main
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write  # ✅ Required for pushing to gh-pages
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,12 +24,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build Vite site
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages  # ✅ MUST include this!
+          publish_branch: gh-pages  # ✅ Explicitly deploy to gh-pages
